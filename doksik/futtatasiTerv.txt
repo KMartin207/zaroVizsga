@@ -1,0 +1,9 @@
+1. semmi se világít - monitoron "kérem a kártyát" felirat
+2. Kártya leolvasása - Monitoron:
+			-(b) (if jó) "Üdvözöljük <nev>/<rendszam>" (Lámpa zöld)
+			- (else) "Sikertelen" (Lámpa piros)
+3.b szervomotor fordul 90 fokot.elején piros aztán a sorompó lámpa zöldre vált amint teljesen felnyílik. amint lecsukódik a lámpa pirosra vált
+ultrahangos szenzor által észlelt autó esetén a sorompó nem csukjódik le amíg nem távozik az autó
+
+4. A rendszer visszaáll alapállapotba
+
