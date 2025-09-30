@@ -52,3 +52,10 @@ CREATE TABLE naplo
     nidoig datetime,
     nparkhely INT
 );
+
+CREATE TABLE ceg
+(
+    cid INT PRIMARY KEY AUTO_INCREMENT,
+    cnev varchar(100)
+);
+
