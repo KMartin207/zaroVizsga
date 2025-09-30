@@ -1,0 +1,53 @@
+CREATE TABLE kartya
+(
+    kid INT PRIMARY KEY,
+    kallapot tinyint
+);
+
+CREATE TABLE ember
+(
+    eid INT PRIMARY KEY,
+    enev varchar(50),
+    email varchar(50),
+    etel varchar(12),
+    estatuszdolg tinyint,
+    ekomment varchar(100),
+    jogosultsag varchar(100)
+);
+
+CREATE TABLE jarmu
+(
+    jid INT PRIMARY KEY,
+    jrendszam varchar(8),
+    jtipus varchar(20),
+    jszin varchar(20),
+    jkomment varchar(100)
+);
+
+
+CREATE TABLE kartyaember
+(
+    keid INT PRIMARY KEY,
+    kid int,
+    eid int
+);
+
+CREATE TABLE emberjarmu
+(
+    ejid INT PRIMARY KEY,
+    eid int,
+    jid int
+);
+
+CREATE TABLE naplo
+(
+    nid INT PRIMARY KEY,
+    keid int,
+    ejid int,
+    nstatusz tinyint,
+    ndatumtol date,
+    nidotol datetime,
+    ndatumig date,
+    nidoig datetime,
+    nparkhely INT
+);
