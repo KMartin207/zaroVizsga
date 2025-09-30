@@ -1,12 +1,13 @@
 CREATE TABLE kartya
 (
-    kid INT PRIMARY KEY,
+    kid INT PRIMARY KEY AUTO_INCREMENT,
+    kazonosito int,
     kallapot tinyint
 );
 
 CREATE TABLE ember
 (
-    eid INT PRIMARY KEY,
+    eid INT PRIMARY KEY AUTO_INCREMENT,
     enev varchar(50),
     email varchar(50),
     etel varchar(12),
@@ -17,7 +18,7 @@ CREATE TABLE ember
 
 CREATE TABLE jarmu
 (
-    jid INT PRIMARY KEY,
+    jid INT PRIMARY KEY AUTO_INCREMENT,
     jrendszam varchar(8),
     jtipus varchar(20),
     jszin varchar(20),
@@ -27,21 +28,21 @@ CREATE TABLE jarmu
 
 CREATE TABLE kartyaember
 (
-    keid INT PRIMARY KEY,
+    keid INT PRIMARY KEY AUTO_INCREMENT,
     kid int,
     eid int
 );
 
 CREATE TABLE emberjarmu
 (
-    ejid INT PRIMARY KEY,
+    ejid INT PRIMARY KEY AUTO_INCREMENT,
     eid int,
     jid int
 );
 
 CREATE TABLE naplo
 (
-    nid INT PRIMARY KEY,
+    nid INT PRIMARY KEY AUTO_INCREMENT,
     keid int,
     ejid int,
     nstatusz tinyint,
