@@ -62,10 +62,12 @@ CREATE TABLE ceg
 CREATE TABLE ertekeles (
     eid INT AUTO_INCREMENT PRIMARY KEY,
     enev VARCHAR(100) NOT NULL,
-    ecsillag TINYINT NOT NULL CHECK (rating BETWEEN 1 AND 5),
+    ecsillag TINYINT NOT NULL CHECK (ecsillag BETWEEN 1 AND 5),
     ekomment TEXT NOT NULL,
     edatum DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+
 
 
 
