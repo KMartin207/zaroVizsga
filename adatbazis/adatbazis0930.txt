@@ -59,3 +59,10 @@ CREATE TABLE ceg
     cnev varchar(100)
 );
 
+CREATE TABLE ertekeles
+(
+    eid int PRIMARY KEY,
+    megjegyzes varchar(255),
+    csillag int
+);
+
