@@ -59,10 +59,13 @@ CREATE TABLE ceg
     cnev varchar(100)
 );
 
-CREATE TABLE ertekeles
-(
-    eid int PRIMARY KEY,
-    megjegyzes varchar(255),
-    csillag int
+CREATE TABLE ertekeles (
+    eid INT AUTO_INCREMENT PRIMARY KEY,
+    enev VARCHAR(100) NOT NULL,
+    ecsillag TINYINT NOT NULL CHECK (rating BETWEEN 1 AND 5),
+    ekomment TEXT NOT NULL,
+    edatum DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+
 
