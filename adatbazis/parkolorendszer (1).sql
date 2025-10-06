@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Sze 11. 14:59
--- Kiszolgáló verziója: 10.4.6-MariaDB
--- PHP verzió: 7.3.8
+-- Létrehozás ideje: 2025. Okt 06. 10:48
+-- Kiszolgáló verziója: 10.4.32-MariaDB
+-- PHP verzió: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,14 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `admin`
+-- Tábla szerkezet ehhez a táblához `ceg`
 --
 
-CREATE TABLE `admin` (
-  `aid` int(11) NOT NULL,
-  `afelhasz` varchar(10) COLLATE utf8_hungarian_ci DEFAULT NULL,
-  `ajelszo` varchar(10) COLLATE utf8_hungarian_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+CREATE TABLE `ceg` (
+  `cid` int(11) NOT NULL,
+  `cnev` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- A tábla adatainak kiíratása `ceg`
+--
+
+INSERT INTO `ceg` (`cid`, `cnev`) VALUES
+(-1, 'proparking.hu');
 
 -- --------------------------------------------------------
 
@@ -42,12 +47,22 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `ember` (
   `eid` int(11) NOT NULL,
-  `enev` varchar(50) COLLATE utf8_hungarian_ci DEFAULT NULL,
-  `email` varchar(50) COLLATE utf8_hungarian_ci DEFAULT NULL,
-  `etel` varchar(12) COLLATE utf8_hungarian_ci DEFAULT NULL,
+  `enev` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `etel` varchar(12) DEFAULT NULL,
   `estatuszdolg` tinyint(4) DEFAULT NULL,
-  `ekomment` varchar(100) COLLATE utf8_hungarian_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+  `ekomment` varchar(100) DEFAULT NULL,
+  `jogosultsag` varchar(100) DEFAULT NULL,
+  `cid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- A tábla adatainak kiíratása `ember`
+--
+
+INSERT INTO `ember` (`eid`, `enev`, `email`, `etel`, `estatuszdolg`, `ekomment`, `jogosultsag`, `cid`) VALUES
+(1, 'Lenhardt Károly', 'karcsivideo@gmail.com', '063125141652', 1, 'Kristályos dolgozó', 'superadmin', -1),
+(2, 'Kothencz Martin', 'kothenczmartin111@gmail.com', '063163527352', 1, 'Jó', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -58,9 +73,8 @@ CREATE TABLE `ember` (
 CREATE TABLE `emberjarmu` (
   `ejid` int(11) NOT NULL,
   `eid` int(11) DEFAULT NULL,
-  `jid` int(11) DEFAULT NULL,
-  `aid` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+  `jid` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -70,11 +84,11 @@ CREATE TABLE `emberjarmu` (
 
 CREATE TABLE `jarmu` (
   `jid` int(11) NOT NULL,
-  `jrendszam` varchar(8) COLLATE utf8_hungarian_ci DEFAULT NULL,
-  `jtipus` varchar(20) COLLATE utf8_hungarian_ci DEFAULT NULL,
-  `jszin` varchar(20) COLLATE utf8_hungarian_ci DEFAULT NULL,
-  `jkomment` varchar(100) COLLATE utf8_hungarian_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+  `jrendszam` varchar(8) DEFAULT NULL,
+  `jtipus` varchar(20) DEFAULT NULL,
+  `jszin` varchar(20) DEFAULT NULL,
+  `jkomment` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -84,8 +98,9 @@ CREATE TABLE `jarmu` (
 
 CREATE TABLE `kartya` (
   `kid` int(11) NOT NULL,
+  `kazonosito` int(11) DEFAULT NULL,
   `kallapot` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -96,9 +111,8 @@ CREATE TABLE `kartya` (
 CREATE TABLE `kartyaember` (
   `keid` int(11) NOT NULL,
   `kid` int(11) DEFAULT NULL,
-  `eid` int(11) DEFAULT NULL,
-  `aid` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+  `eid` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -116,17 +130,17 @@ CREATE TABLE `naplo` (
   `ndatumig` date DEFAULT NULL,
   `nidoig` datetime DEFAULT NULL,
   `nparkhely` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Indexek a kiírt táblákhoz
 --
 
 --
--- A tábla indexei `admin`
+-- A tábla indexei `ceg`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`aid`);
+ALTER TABLE `ceg`
+  ADD PRIMARY KEY (`cid`);
 
 --
 -- A tábla indexei `ember`
@@ -138,9 +152,7 @@ ALTER TABLE `ember`
 -- A tábla indexei `emberjarmu`
 --
 ALTER TABLE `emberjarmu`
-  ADD PRIMARY KEY (`ejid`),
-  ADD KEY `eid` (`eid`),
-  ADD KEY `jid` (`jid`);
+  ADD PRIMARY KEY (`ejid`);
 
 --
 -- A tábla indexei `jarmu`
@@ -158,42 +170,59 @@ ALTER TABLE `kartya`
 -- A tábla indexei `kartyaember`
 --
 ALTER TABLE `kartyaember`
-  ADD PRIMARY KEY (`keid`),
-  ADD KEY `kid` (`kid`),
-  ADD KEY `eid` (`eid`);
+  ADD PRIMARY KEY (`keid`);
 
 --
 -- A tábla indexei `naplo`
 --
 ALTER TABLE `naplo`
-  ADD PRIMARY KEY (`nid`),
-  ADD KEY `keid` (`keid`),
-  ADD KEY `ejid` (`ejid`);
+  ADD PRIMARY KEY (`nid`);
 
 --
--- Megkötések a kiírt táblákhoz
+-- A kiírt táblák AUTO_INCREMENT értéke
 --
 
 --
--- Megkötések a táblához `emberjarmu`
+-- AUTO_INCREMENT a táblához `ceg`
+--
+ALTER TABLE `ceg`
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT a táblához `ember`
+--
+ALTER TABLE `ember`
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT a táblához `emberjarmu`
 --
 ALTER TABLE `emberjarmu`
-  ADD CONSTRAINT `emberjarmu_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `ember` (`eid`),
-  ADD CONSTRAINT `emberjarmu_ibfk_2` FOREIGN KEY (`jid`) REFERENCES `jarmu` (`jid`);
+  MODIFY `ejid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Megkötések a táblához `kartyaember`
+-- AUTO_INCREMENT a táblához `jarmu`
+--
+ALTER TABLE `jarmu`
+  MODIFY `jid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `kartya`
+--
+ALTER TABLE `kartya`
+  MODIFY `kid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `kartyaember`
 --
 ALTER TABLE `kartyaember`
-  ADD CONSTRAINT `kartyaember_ibfk_1` FOREIGN KEY (`kid`) REFERENCES `kartya` (`kid`),
-  ADD CONSTRAINT `kartyaember_ibfk_2` FOREIGN KEY (`eid`) REFERENCES `ember` (`eid`);
+  MODIFY `keid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Megkötések a táblához `naplo`
+-- AUTO_INCREMENT a táblához `naplo`
 --
 ALTER TABLE `naplo`
-  ADD CONSTRAINT `naplo_ibfk_1` FOREIGN KEY (`keid`) REFERENCES `kartyaember` (`keid`),
-  ADD CONSTRAINT `naplo_ibfk_2` FOREIGN KEY (`ejid`) REFERENCES `emberjarmu` (`ejid`);
+  MODIFY `nid` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
