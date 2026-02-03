@@ -1,0 +1,105 @@
+fejlesztői
+
+főoldal:
+
+kommentek működése
+
+api (milyen, illetveműködése)
+
+
+
+adatbázist befejezni (3 tábla)
+
+3d nyomtatott elemek:
+3d nyomtatott elemek modellezése tinkercad-ban történt, egyesével minden elem megtervezve. Az illeszkedésekkel,
+méretekkel együtt. Előre kigondolni, hogy a gombok, nfc olvasó hogyan legyen elrendezve illetve a kábelek elvezetése is.
+	
+
+raspberry pi - sorompórendszer:
+
+komponensek:
+	-kijelző - 1.8 TFT ST7735
+	-nfc olvasó - RC522
+	-minkrovezérlő - raspberry pi pico w
+	-szervómotor - SG90 servo 9g
+	-próbapanel (breadboard)
+	-gombok - 4 lábú gombok
+	-akkumulátor - li-pol 3,7 V
+	-kábelek - female to male, female to female, male to male
+	-led - 2x rgb (az egyik a sorompó végén, a másik a kijelző alatt a gombok felett)
+	-csatlakozók
+	-akkumulátortöltő modul - TP4056 C típusú (ez azért van, hogy az akksit lehessen tölteni)
+
+lépésenként:
+
+1. a kijelző kií
+
+
+
+
+
+
+felhasználói
+
+
+belépés/regisztrálás/bejelentkezés
+
+-A regisztráláshoz szükséges egy szuperadmin aki hozzáadja az adatbzishoz a felasználót.
+-Miután létre lett hozva egy szuperadmin vagy admin felhasználó azután a megadott e-mail
+címmel és a hozzátartozó ranggal tud belépni (a rangja lesz a jelszava pl. admin) ezt követően az első belépéskor 
+felugrik egy ablak, amely felszólít arra, hogy új jelszót állítsunk be (ezzel tudunk belépni a jövőben, ha nem adunk 
+meg akkor minden belépésnél és oldalfrissítésnél kérni fogja). Minden felhasználóhoz tartozik egy cég amibe automatikan 
+belépteti a rendszer a belépés után. Fontos, hogy 15 perc után automaikusan kijelentkeztet az oldal, tehát újra be kell
+majd jelentkezni.
+
+
+
+
+rangrendszer:
+	- szuperadmin: képes az összes cég fölött mindent kezelni pl.: új cég hozzáadása, felhasználók törlése/hozzáadása
+	 bármelyik cégnél, értékelések törlése és változtatása, kártyák hozzáadása/törlése illetve a kártyához tulajdonos 
+	hozzárendelése, kártya státuszának módosítása és kártya szerkesztése, a parkolási naplón belül képes egyszeri használatú
+	kódokat létrehozni amelyek 4 számból állnak (számok 1-3ig terjednek), a kódokat hozzálehet rendelni egy adott céghez, hogy
+	csak ott működjön, kódok státuszának módosítása illetve törlése és a kódok lejárati dátumának beállítása, a szuperadmin 2 féle 
+	statisztikát lát amely az összes cégre is vonatkozik valamint tud szűrni specifikusan adott cégre is
+
+
+	(kód/kódok = egyszerhasználatos azonosító vagy kód a belépéshez [mint pl revolut])
+
+	-admin: dolgozókat és kártyákat tud hozzáadni a saját cégéhez, kártya státuszának állítása, csak a userek adatait tudja változtatni, 
+	illetve törölni a cégtől
+
+
+	-user: a weiss.proparking.hu oldalán tudja kezelni a parkolásait (tudja figyelni, hogy hol parkolt le az autójával),
+	saját felhasználó létrehozása a kártyaazonosító alapján, parkolását tudja menteni annak érdekében, hogy munka után megtalálja az autóját
+
+
+admin felület teljes magyarázata:
+	
+	melyik bal oldalsó fül micsoda, és azon belül megjelenő tartalmak magyarázata pl szűrés
+
+
+Főoldal - értékelés írása
+
+A fő (bemutató) oldal alján van lehetőség véleményt nyílvánítani, értékelni a szolgáltatást. Van lehetőségünk
+1-5 csillagig értékelni (1 a lerosszabb, 5 a legjobb), illetve ehhez szöveget is lehet írni. Az értékelésekről készül statisztika is, amely az értékelések rész alatt található.
+Illetve az értékelések felett láthatóak a korábban már megadott értékelések is. 
+
+Főoldal - menüsor (mi micsoda, mi mit csinál)
+
+
+
+
+
+komponensek: MI MIT CSINÁL, MIÉRT VAN
+	-kijelző - 1.8 TFT ST7735  (Informáljuk a felhasználót)
+	-nfc olvasó - RC522 (A parkolókártya olvasásához szükséges, hogy betudjuk engedni a dolgozókat, illetve kimenetelkor is letudják csippantani)
+	-minkrovezérlő - raspberry pi pico w (A rendszer vezérléséhez szükséges "a rendszer agya")
+	-szervómotor - SG90 servo 9g (A sorompó nyitásához, csukásához szükséges)
+	-próbapanel (breadboard) (A kábelek illetve a többi komponens összekötéséhez szükséges)
+	-gombok - 4 lábú gombok (Az egyszeri belépési kód beírásához szükséges)
+	-akkumulátor - li-pol 3,7 V (A rendszer áramellátására szolgál)
+	-kábelek - female to male, female to female, male to male (A rendszer összekötéséhez kellenek)
+	-led - 2x rgb (az egyik a sorompó végén, a másik a kijelző alatt a gombok felett)  (A VIZUÁLIS SZEMLÉLTETÉS MIATT SZÜKSÉGES!!! Segít látni, hogy a sorompó milyen állapotban van illetve elfogadásra került-e a kártya)
+	-csatlakozók (A kábelek illetve a komponensek összekötéséhez kellenek)
+	-akkumulátortöltő modul - TP4056 C típusú (ez azért van, hogy az akksit lehessen tölteni) 
