@@ -79,13 +79,13 @@ admin felület teljes magyarázata:
 	melyik bal oldalsó fül micsoda, és azon belül megjelenő tartalmak magyarázata pl szűrés
 
 
-Főoldal - értékelés írása
+Főoldal - értékelés írása HIANYZIK
 
 A fő (bemutató) oldal alján van lehetőség véleményt nyílvánítani, értékelni a szolgáltatást. Van lehetőségünk
 1-5 csillagig értékelni (1 a lerosszabb, 5 a legjobb), illetve ehhez szöveget is lehet írni. Az értékelésekről készül statisztika is, amely az értékelések rész alatt található.
 Illetve az értékelések felett láthatóak a korábban már megadott értékelések is. 
 
-Főoldal - menüsor (mi micsoda, mi mit csinál)
+Főoldal - menüsor (mi micsoda, mi mit csinál) HIANYZIK
 
 
 
