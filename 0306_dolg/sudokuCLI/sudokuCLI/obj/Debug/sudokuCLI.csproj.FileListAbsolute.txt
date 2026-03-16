@@ -1,8 +1,0 @@
-Z:\0306_dolg\sudokuCLI\sudokuCLI\bin\Debug\sudokuCLI.exe.config
-Z:\0306_dolg\sudokuCLI\sudokuCLI\bin\Debug\sudokuCLI.exe
-Z:\0306_dolg\sudokuCLI\sudokuCLI\bin\Debug\sudokuCLI.pdb
-Z:\0306_dolg\sudokuCLI\sudokuCLI\obj\Debug\sudokuCLI.csproj.AssemblyReference.cache
-Z:\0306_dolg\sudokuCLI\sudokuCLI\obj\Debug\sudokuCLI.csproj.CoreCompileInputs.cache
-Z:\0306_dolg\sudokuCLI\sudokuCLI\obj\Debug\sudokuCLI.exe
-Z:\0306_dolg\sudokuCLI\sudokuCLI\obj\Debug\sudokuCLI.pdb
-Z:\0306_dolg\sudokuCLI\sudokuCLI\obj\Debug\sudokuCLI.exe.config
