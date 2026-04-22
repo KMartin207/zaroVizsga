@@ -1,0 +1,11 @@
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\obj\Debug\Fuggohidak.Form1.resources
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\obj\Debug\Fuggohidak.Properties.Resources.resources
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\obj\Debug\Fuggohidak.csproj.GenerateResource.cache
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\bin\Debug\Fuggohidak.exe.config
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\bin\Debug\Fuggohidak.exe
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\bin\Debug\Fuggohidak.pdb
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\obj\Debug\Fuggohidak.exe
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\obj\Debug\Fuggohidak.pdb
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\obj\Debug\Fuggohidak.Kereses.resources
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\obj\Debug\Fuggohidak.Form2.resources
+E:\13\SzakmaiVizsgaGyakorlo\Fuggohidak\Fuggohidak\obj\Debug\Fuggohidak.csprojAssemblyReference.cache
